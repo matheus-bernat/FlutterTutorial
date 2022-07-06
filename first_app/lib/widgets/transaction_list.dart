@@ -12,7 +12,10 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      child: ListView.builder(
+      child: transactions.isEmpty ? Column(children: <Widget>[
+        Text('No transactions added yet!'),
+
+      ],) : ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(
             child: Row(
@@ -43,10 +46,7 @@ class TransactionList extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       transactions[index].title,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.headline6, // use the text theme defined in main.dart
                     ),
                     Text(
                       DateFormat.yMMMd().format(transactions[index].date),
