@@ -22,7 +22,7 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     }
 
-    widget.addTx( // the "widget" property gives us access to functions defined in the greater class
+    widget.addTx( // the "widget property gives us access to functions defined in the greater class
       enteredTitle,
       enteredAmount,
     );
