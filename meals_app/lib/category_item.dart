@@ -1,5 +1,5 @@
 ﻿import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/category_meals_screen.dart';
+import './category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -9,8 +9,8 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(
-      '/category_meals',
+    Navigator.of(ctx).pushNamed( // push() creates the MaterialPageRoute object "on the fly" (i.e. in the place where you call push()) whereas pushNamed() only works with pre-registered routes (in the routes table of your MaterialApp widget).
+      CategoryMealsScreen.routeName,
       arguments: {
         'id': id,
         'title': title,
