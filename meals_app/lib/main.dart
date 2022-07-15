@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import './categories_screen.dart';
+import 'package:flutter_complete_guide/screens/meal_detail_screen.dart';
+import 'package:flutter_complete_guide/widgets/meal_item.dart';
+import 'screens/categories_screen.dart';
 
-import './category_meals_screen.dart';
+import 'screens/category_meals_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       }
     );
   }
@@ -48,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('DeliMeals'),
       ),
       body: Center(
-        child: Text('Navigasgsfgtion Time!'),
+        child: Text('Navigation Time!'),
       ),
     );
   }
